@@ -1,0 +1,15 @@
+LIBRARY "NaslLib"
+EXPORTS GetNaslVersion
+        SetLanguage
+        SetTimeout
+        SetWorkDirectory
+        GetWorkDirectory
+        LoadPlugins
+        LoadPluginsFromMemMap
+        FreePlugins
+        LoadPluginInfo
+        ExecNaslScript
+        FindService
+        StartAttack
+        BuildReport
+        GetIfList
