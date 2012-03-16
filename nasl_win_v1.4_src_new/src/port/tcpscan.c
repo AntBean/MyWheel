@@ -255,6 +255,11 @@ int FastTcpScan(char *szHostName, BOOL *PortPool, struct arglist *desc)
                 if (dwTimeOut) dwLastTime = GetTickCount();
             }
             else if (GetTickCount()-dwLastTime > dwTimeOut) {
+		//2012.3.15
+		//Edit:   
+		//	   在小于64个端口时,nDeadIndex过大,DeadStack数组越界
+		//
+		nDeadIndex = -1;
                 for (k=MAX_PARALLEL_SOCKNUM-1; k>=0; k--) {
                     FD_CLR(ServerSock[k], &fdsWrite);
                     FD_CLR(ServerSock[k], &fdsRead);
